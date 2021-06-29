@@ -4,8 +4,8 @@ This application will display skate parks in Los Angeles based on data from [LA 
 
 ## TODO
 - [x] Display Skate Parks with [CSVLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html)
-- [ ] Change symbology to [PictureMarkerSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-PictureMarkerSymbol.html)
-- [ ] Add [PopupTemplate](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) to display attribute information
+- [x] Change symbology to [PictureMarkerSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-PictureMarkerSymbol.html)
+- [x] Add [PopupTemplate](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) to display attribute information
 - [ ] Add [Directions widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html)
 - [ ] Create [Web Style](https://pro.arcgis.com/en/pro-app/latest/help/sharing/overview/share-a-web-style.htm) and/or [Dictionary Renderer](https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/dictionary-renderer.htm) for symbology
 - [ ] Publish CSV data as Feature Layer with Developer Account

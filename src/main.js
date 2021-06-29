@@ -31,6 +31,13 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/CSVLayer"], (Map, MapVie
         }]
     }
 
+    let symbol = {
+        type: "picture-marker", // autocasts as new PictureMarkerSymbol()
+        url: "https://laurenb.esri.com/Personal/SkateParkFinder/sk8-parks/resources/sk8icon.jpg",
+        width: "30px",
+        height: "30px"
+    };
+
     let url = "https://laurenb.esri.com/Personal/SkateParkFinder/sk8-parks/resources/LASkateparks-June21.csv";
 
     //Create the CSVLayer and set lat/long fields
@@ -39,7 +46,11 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/CSVLayer"], (Map, MapVie
         latitudeField: "lat",
         longitudeField: "long",
         copyright: "https://data.lacity.org",
-        popupTemplate: template
+        popupTemplate: template,
+        renderer: {
+            type: "simple",
+            symbol: symbol
+        }
     });
 
     //Set view extent once CSVLayer loads
