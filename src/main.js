@@ -1,4 +1,4 @@
-require(["esri/Map", "esri/views/MapView"], (Map, MapView) => {
+require(["esri/Map", "esri/views/MapView", "esri/widgets/Search"], (Map, MapView, Search) => {
 
     //Create the map & mapview
     const map = new Map({
@@ -12,7 +12,7 @@ require(["esri/Map", "esri/views/MapView"], (Map, MapView) => {
 
     //Create popup template for layer
     const template = {
-        title: "{Location Name}",
+        title: "{Location_Name}",
         content: [{
             type: "fields",
             fieldInfos: [{
@@ -51,5 +51,24 @@ require(["esri/Map", "esri/views/MapView"], (Map, MapView) => {
     });
 
     map.add(layer);
+
+    //add Search Widget to search for the skate park locations
+    let searchWidget = new Search({
+        view: view,
+        apiKey: "CHANGEAPIKEY",
+        includeDefaultSources: false,
+        sources: [{
+            layer: layer,
+            searchFields: ["Location_Name"],
+            displayField: "Location_Name",
+            placeholder: "example: Stoner Skate Park",
+            zoomScale: 20
+        }]
+    });
+    // Adds the Search widget below other elements in
+    // the top right corner of the view
+    view.ui.add(searchWidget, {
+        position: "top-right"
+    });
 
 });
