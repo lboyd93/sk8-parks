@@ -8,6 +8,6 @@ This application will display skate parks in Los Angeles based on data from [LA 
 - [x] Add [PopupTemplate](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) to display attribute information
 - [ ] Add [Directions widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html)
 - [ ] Create [Web Style](https://pro.arcgis.com/en/pro-app/latest/help/sharing/overview/share-a-web-style.htm) and/or [Dictionary Renderer](https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/dictionary-renderer.htm) for symbology
-- [ ] Publish CSV data as Feature Layer with Developer Account
-- [ ] Display data as [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html)
+- [x] Publish CSV data as Feature Layer with Developer Account
+- [x] Display data as [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html)
 - [ ] Add drop down list using Calcite Design System [Select component](https://developers.arcgis.com/calcite-design-system/components/select/) to jump to park that was picked

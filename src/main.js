@@ -1,4 +1,4 @@
-require(["esri/Map", "esri/views/MapView", "esri/layers/CSVLayer"], (Map, MapView, CSVLayer) => {
+require(["esri/Map", "esri/views/MapView"], (Map, MapView) => {
 
     //Create the map & mapview
     const map = new Map({
@@ -31,6 +31,7 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/CSVLayer"], (Map, MapVie
         }]
     }
 
+    //create symbology from picture marker symbol
     let symbol = {
         type: "picture-marker", // autocasts as new PictureMarkerSymbol()
         url: "https://laurenb.esri.com/Personal/SkateParkFinder/sk8-parks/resources/sk8icon.jpg",
@@ -38,29 +39,17 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/CSVLayer"], (Map, MapVie
         height: "30px"
     };
 
-    let url = "https://laurenb.esri.com/Personal/SkateParkFinder/sk8-parks/resources/LASkateparks-June21.csv";
+    //add layer depending on source
+    //var layer = addCSVLayer(template, symbol);
+    var layer = addFeatureLayer(template, symbol);
 
-    //Create the CSVLayer and set lat/long fields
-    let csvLayer = new CSVLayer({
-        url: url,
-        latitudeField: "lat",
-        longitudeField: "long",
-        copyright: "https://data.lacity.org",
-        popupTemplate: template,
-        renderer: {
-            type: "simple",
-            symbol: symbol
-        }
-    });
-
-    //Set view extent once CSVLayer loads
-    csvLayer.when(function() {
-        view.extent = csvLayer.fullExtent;
+    //Set view extent once layer loads
+    layer.when(function() {
+        view.extent = layer.fullExtent;
     }, function(error) {
         console.log(error);
     });
 
+    map.add(layer);
 
-
-    map.add(csvLayer);
 });
