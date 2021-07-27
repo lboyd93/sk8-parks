@@ -2,6 +2,9 @@
 
 This application will display skate parks in Los Angeles based on data from [LA City Data](https://data.lacity.org/w/vwra-z6jg/ir6t-6fx6?cur=vn91vhpgz-a&from=JQ_ENgWb8Pi) using the ArcGIS API for JavaScript.
 
+Live sample available [here](https://lboyd93.github.io/sk8-parks/)! Note: You will need to sign in to use the widgets as of now. This may be changed in the future with API keys.
+
+
 ## TODO
 - [x] Display Skate Parks with [CSVLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-CSVLayer.html)
 - [x] Change symbology to [PictureMarkerSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-PictureMarkerSymbol.html)
