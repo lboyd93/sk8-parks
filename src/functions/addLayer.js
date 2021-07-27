@@ -26,7 +26,7 @@ function addFeatureLayer(template, symbol) {
 
 //     require(["esri/layers/CSVLayer"], (CSVLayer) => {
 
-//         let urlCSV = "https://laurenb.esri.com/Personal/SkateParkFinder/sk8-parks/resources/LASkateparks-June21.csv";
+//         let urlCSV = "https://lboyd93.github.io/sk8-parks/resources/LASkateparks-June21.csv";
 
 //         //Create the CSVLayer and set lat/long fields
 //         csvLayer = new CSVLayer({

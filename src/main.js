@@ -34,7 +34,7 @@ require(["esri/Map", "esri/views/MapView", "esri/widgets/Search"], (Map, MapView
     //create symbology from picture marker symbol
     let symbol = {
         type: "picture-marker", // autocasts as new PictureMarkerSymbol()
-        url: "https://laurenb.esri.com/Personal/SkateParkFinder/sk8-parks/resources/sk8icon.jpg",
+        url: "https://lboyd93.github.io/sk8-parks/resources/sk8icon.jpg",
         width: "30px",
         height: "30px"
     };
