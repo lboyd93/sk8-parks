@@ -11,6 +11,7 @@ Live sample available [here](https://lboyd93.github.io/sk8-parks/)! Note: You wi
 - [x] Add [PopupTemplate](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) to display attribute information
 - [x] Add [Search widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html)
 - [ ] Add [Directions widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html)
+- [ ] Add [FeatureTable widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html)
 - [ ] Create [Web Style](https://pro.arcgis.com/en/pro-app/latest/help/sharing/overview/share-a-web-style.htm) and/or [Dictionary Renderer](https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/dictionary-renderer.htm) for symbology
 - [x] Publish CSV data as Feature Layer with Developer Account
 - [x] Display data as [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html)
