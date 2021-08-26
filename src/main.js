@@ -12,17 +12,17 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
 
     //add layer depending on source
     //var layer = addCSVLayer(template, symbol);
-    var layer = addFeatureLayer();
+    var layer = createFeatureLayer();
+    map.add(layer);
 
     //Set view extent once layer loads
     layer.when(function() {
         view.extent = layer.fullExtent;
+        addSearchWidget(view, layer);
+        addDirectionsWidget(view, layer);
+        addFeatureTable(view, layer);
     }, function(error) {
         console.log(error);
     });
-
-    map.add(layer);
-
-    addWidgets(view, layer);
 
 });

@@ -1,6 +1,6 @@
-function addWidgets(view, layer) {
+function addSearchWidget(view, layer) {
+    require(["esri/widgets/Search"], (Search) => {
 
-    require(["esri/widgets/Search", "esri/widgets/Directions", "esri/widgets/FeatureTable"], (Search, Directions, FeatureTable) => {
         //add Search Widget to search for the skate park locations
         let searchWidget = new Search({
             view: view,
@@ -21,6 +21,11 @@ function addWidgets(view, layer) {
             index: 0
         });
 
+    });
+}
+
+function addDirectionsWidget(view, layer) {
+    require(["esri/widgets/Directions"], (Directions) => {
         let directionsWidget = new Directions({
             view: view,
             //apiKey: "CHANGEAPIKEY"
@@ -42,7 +47,12 @@ function addWidgets(view, layer) {
             position: "top-right",
             index: 0
         });
+    });
+}
 
+
+function addFeatureTable(view, layer) {
+    require(["esri/widgets/FeatureTable"], (FeatureTable) => {
         //Set up feature table and fields to display
         //Add to div already created
         const featureTable = new FeatureTable({
@@ -73,6 +83,5 @@ function addWidgets(view, layer) {
             ],
             container: "tableDiv"
         });
-
     });
 }
