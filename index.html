@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 
 <head>
     <meta charset="utf-8" />
@@ -10,16 +10,28 @@
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/next/"></script>
 
+    <!-- Calcite Components CDN-->
+    <script type="module" src="https://js.arcgis.com/calcite-components/1.0.0-beta.61/calcite.esm.js"></script>
+    <script nomodule="" src="https://js.arcgis.com/calcite-components/1.0.0-beta.61/calcite.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.0-beta.61/calcite.css" />
 
     <!-- Stylesheet and JS scripts -->
     <link rel="stylesheet" type="text/css" href="src/main.css" />
     <script type="text/javascript" src="src/main.js"></script>
-    <script src="./src/functions/addLayer.js"></script>
+    <script src="./src/functions/createLayer.js"></script>
     <script src="./src/functions/widgets.js"></script>
 </head>
 
 <body>
     <div id="viewDiv"></div>
+    <calcite-dropdown max-items="0">
+        <calcite-button slot="dropdown-trigger">List of Skakeparks</calcite-button>
+        <calcite-dropdown-group selection-mode="single" group-title="Skateparks">
+            <calcite-dropdown-item>Relevance</calcite-dropdown-item>
+            <calcite-dropdown-item>Date modified</calcite-dropdown-item>
+            <calcite-dropdown-item>Title</calcite-dropdown-item>
+        </calcite-dropdown-group>
+    </calcite-dropdown>
     <div class="container">
         <div id="tableDiv"></div>
     </div>

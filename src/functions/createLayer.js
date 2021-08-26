@@ -1,4 +1,4 @@
-function addFeatureLayer() {
+function createFeatureLayer() {
     let featureLayer;
 
     require(["esri/layers/FeatureLayer"], (FeatureLayer) => {
@@ -34,7 +34,7 @@ function addFeatureLayer() {
 
         let urlFeatureLayer = "https://services8.arcgis.com/saVeZItOAdgjvI3s/arcgis/rest/services/la_skateparks/FeatureServer/0";
 
-        //Create the CSVLayer and set lat/long fields
+        //Create FeatureLayer with template and symbology
         featureLayer = new FeatureLayer({
             url: urlFeatureLayer,
             popupTemplate: template,
@@ -50,7 +50,7 @@ function addFeatureLayer() {
 }
 
 // TODO: CVSLayer no longer working when added to this function file - need to check why
-// function addCSVLayer(template, symbol) {
+// function createCSVLayer(template, symbol) {
 //     let csvLayer;
 
 //     require(["esri/layers/CSVLayer"], (CSVLayer) => {
