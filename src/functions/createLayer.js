@@ -8,6 +8,7 @@ function createFeatureLayer(template, symbol) {
         //Create FeatureLayer with template and symbology
         featureLayer = new FeatureLayer({
             url: urlFeatureLayer,
+            outFields: ["*"],
             popupTemplate: template,
             renderer: {
                 type: "simple",

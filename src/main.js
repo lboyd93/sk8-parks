@@ -48,11 +48,27 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
         view.ui.add("dropdown", {
             position: "bottom-left"
         });
-        layer.when(function() {
-            view.extent = layer.fullExtent;
+        view.whenLayerView(layer).then(function(layerView) {
+            view.extent = layerView.layer.fullExtent;
             addSearchWidget(view, layer);
-            addDirectionsWidget(view, layer);
+            //addDirectionsWidget(view, layer);
             addFeatureTable(view, layer);
+            layerView.watch("updating", function(val) {
+                if (!val) { // wait for the layer view to finish updating
+                    let query = layerView.createQuery();
+                    layerView.queryFeatures(query).then(function(results) {
+                        let features = results.features;
+                        let locationName = "Location_Name";
+                        features.forEach(feature => {
+                            //TODO : Get the names to render in the dropdown list
+                            const item = document.createElement("calcite-dropdown-item");
+                            item.setAttribute("value", feature.attributes[locationName]);
+                            document.getElementById("dropdown").appendChild(item);
+                        });
+                    });
+                }
+            });
+
         }, function(error) {
             console.log(error);
         });
