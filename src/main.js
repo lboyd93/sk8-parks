@@ -51,7 +51,7 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
         view.whenLayerView(layer).then(function(layerView) {
             view.extent = layerView.layer.fullExtent;
             addSearchWidget(view, layer);
-            //addDirectionsWidget(view, layer);
+            addDirectionsWidget(view, layer);
             addFeatureTable(view, layer);
             layerView.watch("updating", function(val) {
                 if (!val) { // wait for the layer view to finish updating
