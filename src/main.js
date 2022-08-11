@@ -35,7 +35,7 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
     }
 
     //create symbology from picture marker symbol
-    let symbol = {
+    const symbol = {
         type: "picture-marker", // autocasts as new PictureMarkerSymbol()
         url: "https://lboyd93.github.io/sk8-parks/resources/sk8icon.jpg",
         width: "30px",
@@ -43,11 +43,11 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
     };
 
     //add featurelayer
-    var layer = createFeatureLayer(template, symbol);
+    const layer = createFeatureLayer(template, symbol);
     map.add(layer);
 
     //Set view extent once layer loads and add widgets
-    view.when(function() {
+    view.when(() => {
         //add all UI components when the view loads
         view.ui.add("dropdown", {
             position: "bottom-left"
@@ -56,17 +56,17 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
         addDirectionsWidget(view, layer);
         addFeatureTable(view, layer);
         //create a layerview to query
-        view.whenLayerView(layer).then(function(layerView) {
+        view.whenLayerView(layer).then((layerView) => {
             view.extent = layerView.layer.fullExtent;
-            layerView.watch("updating", function(val) {
+            layerView.watch("updating", (val) => {
                 if (!val) { // wait for the layer view to finish updating
                     let query = layerView.createQuery();
                     //query for all features with all OutFields
-                    layerView.queryFeatures(query).then(function(results) {
+                    layerView.queryFeatures(query).then((results) => {
                         let features = results.features;
                         let locationName = "Location_Name";
                         //populate the calcite dropdown
-                        features.forEach(feature => {
+                        features.forEach((feature) => {
                             //TODO : Get the names to render in the dropdown list
                             const item = document.createElement("calcite-dropdown-item");
                             item.value = feature.attributes[locationName];
@@ -77,7 +77,7 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
                 }
             });
 
-        }, function(error) {
+        }, (error)=> {
             console.log(error);
         });
     });
@@ -85,7 +85,7 @@ require(["esri/Map", "esri/views/MapView", ], (Map, MapView) => {
     function dropdownOnSelectEvent(event) {
         const target = event.target;
         const selectItems = target.selectedItems;
-        console.log(selectItems);
+        console.log(target);
     }
 
 });

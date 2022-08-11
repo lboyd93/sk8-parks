@@ -1,8 +1,7 @@
 function addSearchWidget(view, layer) {
     require(["esri/widgets/Search"], (Search) => {
-
         //add Search Widget to search for the skate park locations
-        let searchWidget = new Search({
+        const searchWidget = new Search({
             view: view,
             apiKey: "CHANGEAPIKEY",
             includeDefaultSources: false,
@@ -26,7 +25,7 @@ function addSearchWidget(view, layer) {
 
 function addDirectionsWidget(view, layer) {
     require(["esri/widgets/Directions"], (Directions) => {
-        let directionsWidget = new Directions({
+        const directionsWidget = new Directions({
             view: view,
             //apiKey: "CHANGEAPIKEY"
             searchProperties: {
