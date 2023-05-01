@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="initial-scale=1,maximum-scale=1,user-scalable=no"
+		/>
+		<title>SoCal Sk8 Park Finder</title>
+		<link
+			rel="icon"
+			href="https://lboyd93.github.io/sk8-parks/resources/sk8icon.jpg"
+		/>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>SoCal Sk8 Park Finder</title>
-    <link rel="icon" href="https://lboyd93.github.io/sk8-parks/resources/sk8icon.jpg">
+		<!-- ArcGIS API for JavaScript sources -->
+		<link
+			rel="stylesheet"
+			href="https://js.arcgis.com/next/esri/themes/light/main.css"
+		/>
+		<script src="https://js.arcgis.com/next/"></script>
 
-    <!-- ArcGIS API for JavaScript sources -->
-    <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css" />
-    <script src="https://js.arcgis.com/next/"></script>
+		<!-- Calcite Components CDN-->
+		<script
+			type="module"
+			src="https://js.arcgis.com/calcite-components/1.3.0/calcite.esm.js"
+		></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://js.arcgis.com/calcite-components/1.3.0/calcite.css"
+		/>
 
-    <!-- Calcite Components CDN-->
-    <script type="module" src="https://js.arcgis.com/calcite-components/1.0.0-beta.61/calcite.esm.js"></script>
-    <script nomodule="" src="https://js.arcgis.com/calcite-components/1.0.0-beta.61/calcite.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.0-beta.61/calcite.css" />
+		<!-- Stylesheet and JS scripts -->
+		<link rel="stylesheet" type="text/css" href="src/main.css" />
+		<script type="text/javascript" src="src/main.js"></script>
+		<script src="./src/functions/createLayer.js"></script>
+		<script src="./src/functions/widgets.js"></script>
+		<script src="./src/functions/queryView.js"></script>
+	</head>
 
-    <!-- Stylesheet and JS scripts -->
-    <link rel="stylesheet" type="text/css" href="src/main.css" />
-    <script type="text/javascript" src="src/main.js"></script>
-    <script src="./src/functions/createLayer.js"></script>
-    <script src="./src/functions/widgets.js"></script>
-    <script src="./src/functions/queryView.js"></script>
-</head>
-
-<body>
-    <div id="viewDiv"></div>
-    <calcite-dropdown id="dropdown" placement="top-leading">
-        <calcite-button slot="dropdown-trigger">List of Skakeparks</calcite-button>
-        <calcite-dropdown-group id="dropdown-group" group-title="Skateparks">
-        </calcite-dropdown-group>
-    </calcite-dropdown>
-    <div class="container">
-        <div id="tableDiv"></div>
-    </div>
-</body>
-
+	<body>
+		<div id="viewDiv"></div>
+		<calcite-dropdown id="dropdown" placement="top-leading">
+			<calcite-button slot="trigger">List of Skakeparks</calcite-button>
+			<calcite-dropdown-group id="dropdown-group" group-title="Skateparks">
+			</calcite-dropdown-group>
+		</calcite-dropdown>
+		<div class="container">
+			<div id="tableDiv"></div>
+		</div>
+	</body>
 </html>
